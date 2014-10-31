@@ -43,21 +43,27 @@
 	font-size: 12px;
 }
 
-.gp2wp-album-feed-table,
-.gp2wp-album-feed-table tr,
-.gp2wp-album-feed-table th,
-.gp2wp-album-feed-table td {
-	display: block !important;
-	box-sizing: border-box !important;
-	padding: 5px !important;
+.gp2wp-album-feed * {
+	box-sizing: border-box;
+	word-break: break-all;
 }
 
-.gp2wp-album-feed-table tr {
+.gp2wp-album-feed .inline-block {
 	width: 150px;
-	float: left;
+	display: inline-block;
 	padding: 5px;
 	border: 1px solid #ccc;
 	margin: 5px;
+	vertical-align: top;
+}
+
+.gp2wp-album-feed .inline-block p {
+	font-size: 10px;
+}
+
+.gp2wp-album-feed .inline-block div {
+	text-align: center;
+	margin-top: 10px;
 }
 
 .gp2wp-pagination {

@@ -3,13 +3,13 @@
 Plugin Name: Picasa 2 WordPress ( Picasa Image Downloader )
 Plugin URI: https://ibgroup.co.jp
 Description: Downloading Google Picasa images into WordPress media library and delete Google Picasa images from WordPress admin panel.
-Version: 1.0.0
+Version: 1.0.1
 Author: IBRIDGE
 Author URI: http://ibgroup.co.jp
 License: GPL
 */
 
-define( 'GP2WP_Version'  , '1.0.0' );
+define( 'GP2WP_Version'  , '1.0.1' );
 define( 'GP2WP_Name'     , 'gp2wp' );
 define( 'GP2WP_Dir_Name' , dirname( plugin_basename( __FILE__ ) ) );
 define( 'GP2WP_Dir'      , plugin_dir_path( __FILE__ ) );
@@ -113,19 +113,23 @@ class gp2wp {
 	}
 	
 	function browser_page() {
-		?>
-		<div id="gp2wp" class="wrap">
 		
-			<h2><?php _e( 'Picasa Browser', GP2WP_Name ); ?>
+		if ( $this->get_all_options['google-username'] && $this->get_all_options['google-password'] ) {
+			?>
+			<div id="gp2wp" class="wrap">
 			
-			<div class="gp2wp-content">
-			
-				<?php echo $this->get_user_feed(); ?>
+				<h2><?php _e( 'Picasa Browser', GP2WP_Name ); ?>
+				
+				<div class="gp2wp-content">
+				
+					<?php echo $this->get_user_feed(); ?>
+				
+				</div>
 			
 			</div>
+			<?php
+		}
 		
-		</div>
-		<?php
 	}
 	
 	function settings_page() {
@@ -221,7 +225,7 @@ class gp2wp {
 						$output .= '<tr>';
 							$output .= '<td>' . $userEntry->title->text . '</td>';
 							//$output .= '<td>'. $album_id . '</td>';
-							$output .= '<td><a href="" class="gp2wp-ajax-pagination button" data-album-id="' . $album_id . '" data-page-num="1">' . __( 'View', GP2WP_Name ) . '</a></td>';
+							$output .= '<td><a href="" class="gp2wp-ajax-pagination button button-primary" data-album-id="' . $album_id . '" data-page-num="1">' . __( 'View', GP2WP_Name ) . '</a></td>';
 						$output .= '</tr>';
 						
 					}
@@ -229,7 +233,7 @@ class gp2wp {
 				
 			$output .= '</table>';
 			
-			$output .= '<div id="gp2wp-ajax-album-feed"></div>';
+			$output .= '<div id="gp2wp-ajax-return"></div>';
 			
 			ob_start();
 				
@@ -258,11 +262,10 @@ class gp2wp {
 								jQuery('.gp2wp_overlay').fadeIn().block({message: null, overlayCSS: {background: '#fff url(<?php echo plugins_url( 'images/' , __FILE__ ) . 'ajax-loader.gif'; ?>) no-repeat center', backgroundSize: '16px', opacity: 0.6, cursor:'none'}});
 							},
 							complete: function() {
-								jQuery('html, body').animate({scrollTop:jQuery('#gp2wp-ajax-album-feed').offset().top}, 'slow');
 								jQuery('.gp2wp_overlay').unblock().fadeOut();
 							},
 							success: function(data) {
-								jQuery('#gp2wp-ajax-album-feed').html(data);
+								jQuery('#gp2wp-ajax-return').html(data);
 							}
 						});
 					}));
@@ -292,7 +295,7 @@ class gp2wp {
 								jQuery('.gp2wp_overlay').fadeIn().block({message: null, overlayCSS: {background: '#fff url(<?php echo plugins_url( 'images/' , __FILE__ ) . 'ajax-loader.gif'; ?>) no-repeat center', backgroundSize: '16px', opacity: 0.6, cursor:'none'}});
 							},
 							complete: function() {
-								jQuery('#'+ _elementsId).removeClass('gp2wp-ajax-download').addClass('button-disabled');
+								jQuery('#'+ _elementsId).removeClass('gp2wp-ajax-download button-primary').addClass('button-disabled');
 								jQuery.magnificPopup.open({
 									items: {
 										src: '#gp2wp-mfp-inline-content',
@@ -305,13 +308,17 @@ class gp2wp {
 								jQuery('.gp2wp_overlay').unblock().fadeOut();
 							},
 							success: function(data) {
-								jQuery('#gp2wp-ajax-album-feed').html(data);
+								jQuery('#gp2wp-ajax-return').html(data);
 							}
 						});
 					}));
 					
 					jQuery(document.body).on('click', '.gp2wp-ajax-delete', (function(event) {
 						event.preventDefault();
+						
+						if ( !confirm('<?php _e( 'Are you sure you want to delete this ?', GP2WP_Name ); ?>') ) {
+							return false;
+						}
 						
 						var _this    = jQuery(this);
 						var _albumId = _this.data('album-id');
@@ -332,7 +339,6 @@ class gp2wp {
 								jQuery('.gp2wp_overlay').fadeIn().block({message: null, overlayCSS: {background: '#fff url(<?php echo plugins_url( 'images/' , __FILE__ ) . 'ajax-loader.gif'; ?>) no-repeat center', backgroundSize: '16px', opacity: 0.6, cursor:'none'}});
 							},
 							complete: function() {
-								jQuery('html, body').animate({scrollTop:(jQuery('#gp2wp-ajax-album-feed').offset().top - 50 )}, 'slow');
 								jQuery.magnificPopup.open({
 									items: {
 										src: '#gp2wp-mfp-inline-content',
@@ -345,7 +351,7 @@ class gp2wp {
 								jQuery('.gp2wp_overlay').unblock().fadeOut();
 							},
 							success: function(data) {
-								jQuery('#gp2wp-ajax-album-feed').html(data);
+								jQuery('#gp2wp-ajax-return').html(data);
 							}
 						});
 					}));
@@ -370,11 +376,10 @@ class gp2wp {
 								jQuery('.gp2wp_overlay').fadeIn().block({message: null, overlayCSS: {background: '#fff url(<?php echo plugins_url( 'images/' , __FILE__ ) . 'ajax-loader.gif'; ?>) no-repeat center', backgroundSize: '16px', opacity: 0.6, cursor:'none'}});
 							},
 							complete: function() {
-								jQuery('html, body').animate({scrollTop:jQuery('#gp2wp-ajax-album-feed').offset().top}, 'slow');
 								jQuery('.gp2wp_overlay').unblock().fadeOut();
 							},
 							success: function(data) {
-								jQuery('#gp2wp-ajax-album-feed').html(data);
+								jQuery('#gp2wp-ajax-return').html(data);
 							}
 						});
 					}));
@@ -511,7 +516,7 @@ class gp2wp {
 				
 				}
 				
-				echo '<table class="form-table gp2wp-album-feed-table">';
+				echo '<div class="gp2wp-album-feed">';
 					foreach ( $feed as $entry ) {
 						
 						$title        = $entry->getTitle();
@@ -528,15 +533,15 @@ class gp2wp {
 						$photo_id     = $entry->getGphotoId();
 						//$albumid      = $entry->getGphotoAlbumId();
 						
-						echo '<tr>';
-							echo '<td><img src="' . $thumb_url . '"/></td>';
-							echo '<td>' . __( 'File: ', GP2WP_Name ) . $title . '</td>';
-							echo '<td><span class="gp2wp-ajax-download button left" id="' . $photo_id . '" data-album-id="' . $album_id . '" data-page-num="' . $page_num . '" data-title="' . $title . '" data-original-url="' . $original_url . '" >' . __( 'Download' ) . '</span></td>';
-							echo '<td><span class="gp2wp-ajax-delete button right" data-album-id="' . $album_id . '" data-page-num="' . $page_num . '" data-photo-id="' . $photo_id . '">' . __( 'Delete', GP2WP_Name ) . '</span></td>';
-						echo '</tr>';
+						echo '<div class="inline-block">';
+							echo '<img src="' . $thumb_url . '"/>';
+							echo '<p>' . __( 'File: ', GP2WP_Name ) . $title . '</p>';
+							echo '<div><span class="gp2wp-ajax-download button button-primary" id="' . $photo_id . '" data-album-id="' . $album_id . '" data-page-num="' . $page_num . '" data-title="' . $title . '" data-original-url="' . $original_url . '" >' . __( 'Download' ) . '</span></div>';
+							echo '<div><span class="gp2wp-ajax-delete button" data-album-id="' . $album_id . '" data-page-num="' . $page_num . '" data-photo-id="' . $photo_id . '">' . __( 'Delete', GP2WP_Name ) . '</span></div>';
+						echo '</div>';
 						
 					}
-				echo '</table>';
+				echo '</div>';
 				
 				if ( $max_page_num > 1 ) {
 					

@@ -1,6 +1,7 @@
 === Picasa 2 WordPress ( Picasa Image Downloader ) ===
 Requires at least: 3.8
 Tested up to: 4.0
+Stable tag: 1.0.1
 Author: IBRIDGE
 Author URI: http://ibgroup.co.jp
 License: GPLv2 or later
@@ -24,11 +25,14 @@ Picasa Web Albums Data API version 1.0 ( https://developers.google.com/picasa-we
 
 == Changelog ==
 
-	Legend:
+Legend:
 
-	[+] - new feature/improvement
-	[*] - functionality changes
-	[!] - bugfix
+[+] - new feature/improvement
+[*] - functionality changes
+[!] - bugfix
 
-	Version 1.0
-		Launch  :)
+Version 1.0.1
+	[!] Display PHP Notice when setting has not completed.
+
+Version 1.0.0
+	Launch  :)
