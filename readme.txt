@@ -17,6 +17,11 @@ Picasa Web Albums Data API version 1.0 ( https://developers.google.com/picasa-we
  * PHP 5.14+
 
 
+== Screenshots ==
+1. Album Interface
+2. Settings Interface
+
+
 == Installation ==
 
 1. Upload `picasa2wordpress` directory to the `/wp-content/plugins/` directory
