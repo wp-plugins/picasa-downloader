@@ -1,0 +1,151 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Picasa 2 WordPress v1.0.0\n"
+"POT-Creation-Date: 2014-10-27 12:24+0900\n"
+"PO-Revision-Date: 2014-10-27 12:25+0900\n"
+"Last-Translator: IBRIDGE Co., Ltd. <contact@ibgroup.co.jp>\n"
+"Language-Team: IBRIDGE <contact@ibgroup.co.jp>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.4\n"
+"X-Poedit-KeywordsList: _;_e;__;esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../picasa2wordpress.php:41
+msgid "Per 10 Photos"
+msgstr ""
+
+#: ../picasa2wordpress.php:42
+msgid "Per 30 Photos"
+msgstr ""
+
+#: ../picasa2wordpress.php:43
+msgid "Per 50 Photos"
+msgstr ""
+
+#: ../picasa2wordpress.php:44
+msgid "Per 100 Photos"
+msgstr ""
+
+#: ../picasa2wordpress.php:92
+msgid "Picasa"
+msgstr ""
+
+#: ../picasa2wordpress.php:93
+msgid "Settings"
+msgstr ""
+
+#: ../picasa2wordpress.php:119
+msgid "Picasa Browser"
+msgstr ""
+
+#: ../picasa2wordpress.php:135
+msgid "Picasa Settings"
+msgstr ""
+
+#: ../picasa2wordpress.php:143
+msgid "Google Username"
+msgstr ""
+
+#: ../picasa2wordpress.php:147
+msgid "Google Password"
+msgstr ""
+
+#: ../picasa2wordpress.php:151
+msgid "Photos Rows"
+msgstr ""
+
+#: ../picasa2wordpress.php:168
+msgid "Save"
+msgstr ""
+
+#: ../picasa2wordpress.php:208
+msgid "Album list"
+msgstr ""
+
+#: ../picasa2wordpress.php:212
+msgid "Album Name"
+msgstr ""
+
+#: ../picasa2wordpress.php:212
+msgid "Action"
+msgstr ""
+
+#: ../picasa2wordpress.php:223
+msgid "View"
+msgstr ""
+
+#: ../picasa2wordpress.php:392 ../picasa2wordpress.php:401
+#: ../picasa2wordpress.php:582 ../picasa2wordpress.php:667
+msgid "Error: "
+msgstr ""
+
+#: ../picasa2wordpress.php:395
+msgid "Body: "
+msgstr ""
+
+#: ../picasa2wordpress.php:416 ../picasa2wordpress.php:596
+#: ../picasa2wordpress.php:639
+msgid "Error: Absent Album ID."
+msgstr ""
+
+#: ../picasa2wordpress.php:424 ../picasa2wordpress.php:602
+#: ../picasa2wordpress.php:645
+msgid "Error: Absent Page Number."
+msgstr ""
+
+#: ../picasa2wordpress.php:463
+msgid " photo(s) find."
+msgstr ""
+
+#: ../picasa2wordpress.php:482 ../picasa2wordpress.php:503
+#: ../picasa2wordpress.php:547 ../picasa2wordpress.php:568
+msgid "Next"
+msgstr ""
+
+#: ../picasa2wordpress.php:484 ../picasa2wordpress.php:493
+#: ../picasa2wordpress.php:500 ../picasa2wordpress.php:549
+#: ../picasa2wordpress.php:558 ../picasa2wordpress.php:565
+msgid "/"
+msgstr ""
+
+#: ../picasa2wordpress.php:491 ../picasa2wordpress.php:498
+#: ../picasa2wordpress.php:556 ../picasa2wordpress.php:563
+msgid "Prev"
+msgstr ""
+
+#: ../picasa2wordpress.php:532
+msgid "File: "
+msgstr ""
+
+#: ../picasa2wordpress.php:533
+msgid "Download"
+msgstr ""
+
+#: ../picasa2wordpress.php:534
+msgid "Delete"
+msgstr ""
+
+#: ../picasa2wordpress.php:608
+msgid "Error: Absent Image Title."
+msgstr ""
+
+#: ../picasa2wordpress.php:614
+msgid "Error: Absent Image URL."
+msgstr ""
+
+#: ../picasa2wordpress.php:623
+msgid "Download Completed."
+msgstr ""
+
+#: ../picasa2wordpress.php:651
+msgid "Error: Absent Photo ID."
+msgstr ""
+
+#: ../picasa2wordpress.php:663
+msgid "Delete Completed."
+msgstr ""

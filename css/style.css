@@ -1,0 +1,340 @@
+/* Clearfix */
+.gp2wp-pagination:after,
+.gp2wp-album-feed-table:after {
+	display: block;
+	visibility: hidden;
+	clear: both;
+	overflow: hidden;
+	height: 0;
+	content: ".";
+}
+
+.gp2wp_overlay {
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #fff;
+	opacity: 0.6;
+	
+	z-index: 999997;
+}
+
+.gp2wp-content img {
+	max-width: 100%;
+	height: auto;
+	box-shadow: 0 0 2px rgba(0,0,0,.15);
+}
+
+.gp2wp-content h2 {
+	margin-top: 30px;
+}
+
+.gp2wp-user-feed-table th,
+.gp2wp-user-feed-table td {
+	padding: 5px !important;
+	display: table-cell !important;
+}
+	
+.gp2wp-album-name span {
+	font-size: 12px;
+}
+
+.gp2wp-album-feed-table,
+.gp2wp-album-feed-table tr,
+.gp2wp-album-feed-table th,
+.gp2wp-album-feed-table td {
+	display: block !important;
+	box-sizing: border-box !important;
+	padding: 5px !important;
+}
+
+.gp2wp-album-feed-table tr {
+	width: 150px;
+	float: left;
+	padding: 5px;
+	border: 1px solid #ccc;
+	margin: 5px;
+}
+
+.gp2wp-pagination {
+	text-align: center;
+	margin: 15px 0;
+}
+
+.gp2wp-pagination a.prev {
+	float: left;
+}
+
+.gp2wp-pagination a.next {
+	float: right;
+}
+
+/* Magnific Popup CSS extend Dress */
+.mfp-bg {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #000;
+	opacity: 0.8;
+	
+	z-index: 999998;
+}
+
+.mfp-wrap {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+	z-index: 999999;
+}
+
+.mfp-wrap * {
+	box-sizing: border-box;
+	word-break: break-all;
+}
+
+.mfp-container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	padding: 0 5px;
+}
+
+.mfp-container:before {
+	content: '';
+	height: 100%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.mfp-content {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: left;
+	position: relative;
+	overflow: hidden;
+}
+
+.mfp-inline-holder,
+.mfp-ajax-holder {
+	padding: 0 20px;
+}
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+	width: auto;
+	background: #fff;
+	line-height: 1.5em;
+	padding: 20px;
+	margin: 20px auto;
+}
+
+.mfp-s-ready .mfp-preloader,
+.mfp-ready .mfp-preloader,
+.mfp-loading.mfp-figure,
+.mfp-s-error .mfp-content {
+	display: none;
+}
+
+.mfp-hide {
+	display: none !important;
+}
+
+.mfp-preloader {
+
+}
+
+.mfp-close,
+.mfp-arrow {
+	display: block;
+	position: absolute;
+	z-index: 100;
+	cursor: pointer;
+	text-align: center;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+	@media (max-width: 767px) {
+	.mfp-arrow {
+		background: rgba(0,0,0,.4);
+	}
+	.mfp-arrow:hover {
+		background: rgba(0,0,0,.6);
+	}
+	}
+
+.mfp-close:before,
+.mfp-arrow:before {
+	display: block;
+	font-family: "icomoon";
+	color: rgba(255,255,255,.6);
+	text-indent: 0;
+	white-space: normal;
+	overflow: visible;
+}
+
+.mfp-close:hover:before,
+.mfp-arrow:hover:before {
+	color: rgba(255,255,255,.8);
+}
+
+.mfp-close {
+	width: 20px;
+	height: 20px;
+	top: 10px;
+	right: 0;
+}
+
+.mfp-inline-holder .mfp-close,
+.mfp-ajax-holder .mfp-close {
+	width: 12px;
+	height: 12px;
+	top: 4px;
+	right: 4px;
+}
+
+.mfp-close:before {
+	font-size: 20px;
+	line-height: 20px;
+	content: "×" 
+}
+
+.mfp-inline-holder .mfp-close:before,
+.mfp-ajax-holder .mfp-close:before {
+	font-size: 12px;
+	line-height: 12px;
+	color: #676767;
+}
+
+.mfp-arrow {
+	width: 50px;
+	height: 80px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.mfp-arrow.mfp-arrow-left {
+	left: 0;
+}
+
+.mfp-arrow.mfp-arrow-right {
+	right: 0;
+}
+
+.mfp-arrow:before {
+	font-size: 50px;
+	line-height: 80px;
+}
+
+.mfp-arrow.mfp-arrow-left:before {
+	content: "＜";
+}
+
+.mfp-arrow.mfp-arrow-right:before {
+	content: "＞";
+}
+
+img.mfp-img {
+	padding: 40px 0;
+}
+
+.mfp-bottom-bar {
+	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	overflow: hidden;
+}
+
+.mfp-bottom-bar > * {
+	display: inline;
+}
+
+.mfp-bottom-bar .mfp-title {
+	color: #fff;
+	font-size: 12px;
+}
+
+.mfp-bottom-bar .mfp-counter {
+	float: right;
+	color: #ccc;
+	font-size: 10px;
+}
+
+/* start state */
+.dress-mfp-zoom-in figure img,
+.dress-mfp-zoom-in .mfp-content {
+	-webkit-transition: all 0.2s ease-in-out; 
+	-moz-transition: all 0.2s ease-in-out; 
+	-o-transition: all 0.2s ease-in-out; 
+	transition: all 0.2s ease-in-out; 
+	-webkit-transform: scale(0.8); 
+	-moz-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	-o-transform: scale(0.8); 
+	transform: scale(0.8); 
+	opacity: 0;
+}
+
+/* animate in */
+.dress-mfp-zoom-in.mfp-ready figure img,
+.dress-mfp-zoom-in.mfp-ready .mfp-content {
+	-webkit-transform: scale(1); 
+	-moz-transform: scale(1); 
+	-ms-transform: scale(1); 
+	-o-transform: scale(1); 
+	transform: scale(1);
+	opacity: 1;
+}
+
+/* animate out */
+.dress-mfp-zoom-in.mfp-removing figure img,
+.dress-mfp-zoom-in.mfp-removing .mfp-content {
+	-webkit-transform: scale(0.8); 
+	-moz-transform: scale(0.8); 
+	-ms-transform: scale(0.8); 
+	-o-transform: scale(0.8); 
+	transform: scale(0.8); 
+	opacity: 0;
+}
+
+/* Dark overlay, start state */
+.dress-mfp-zoom-in.mfp-bg {
+	opacity: 0.001; /* Chrome opacity transition bug */
+	-webkit-transition: opacity 0.3s ease-out; 
+	-moz-transition: opacity 0.3s ease-out; 
+	-o-transition: opacity 0.3s ease-out; 
+	transition: opacity 0.3s ease-out;
+}
+
+/* animate in */
+.dress-mfp-zoom-in.mfp-ready.mfp-bg {
+	opacity: 0.8;
+}
+
+/* animate out */
+.dress-mfp-zoom-in.mfp-removing.mfp-bg {
+	opacity: 0;
+}
