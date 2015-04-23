@@ -1,6 +1,6 @@
 === Picasa 2 WordPress ( Picasa Image Downloader ) ===
 Requires at least: 3.8
-Tested up to: 4.0
+Tested up to: 4.1.1
 Stable tag: 1.0.1
 Author: IBRIDGE
 Author URI: http://ibgroup.co.jp
